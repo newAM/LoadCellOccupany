@@ -17,7 +17,7 @@ roundR  = 2;    // radius of rounded corners
 wallCut = wallW + cutClear;
 
 // ethernet cutout sizes
-ethH = 13.61 + wallW * 2; // 14.00 datasheet recommended
+ethH = 13.61 + clear * 2; // 14.00 datasheet recommended
 ethW = 16.79 + clear * 2; // 17.55 datasheet recommended
 
 // TRS cutout sizes

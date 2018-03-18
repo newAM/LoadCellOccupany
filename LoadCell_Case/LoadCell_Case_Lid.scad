@@ -13,7 +13,7 @@ wallEdge = [(pcbW + wallW) / 2 + clear, (pcbL + wallW) / 2 + clear, - lidOuterSi
 lidEthCutout = [ethW, wallCut, lidInnerSize[2] + cutClear];
 
 // trs cutout for lid
-lidTrsCutout = [wallCut, trsRad * 2 + trsSpace * (trsNum - 1) + clear * 2, pcbH + chipH + trsRad];
+lidTrsCutout = [wallCut, trsRad * 2 + trsSpace * (trsNum - 1) + clear * 2, pcbH + chipH + trsRad * 2 + clear];
 
 difference() {
 
