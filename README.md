@@ -7,7 +7,7 @@ This project is a occupancy sensor that uses a load cell for couches and beds, t
 Other bed occupancy sensors that I have used in my home automation setup trigger false negatives when rolling around at night.  I use bed occupancy to turn on my lights if I get up at night, and I wanted a faster, more accurate solution.
 
 #### Why PoE?
-Wireless home automation devices often make sense only when they are battery powered, if a power cable needs to be run it can carry data too.  Designing a low power wireless device is far more complicated than designing a wired device and running an Ethernet cable.
+Wireless home automation devices often make sense only when they are battery powered, if a power cable needs to be run to the device it can carry data too.  Designing a low power wireless device is far more complicated than designing a wired device and running an Ethernet cable.
 
 ## Overview
 Load cells → HX711 (ADC) → ATMega328P (MCU) → W5100 (Ethernet) → MQTT Broker → Home Assistant
@@ -24,6 +24,7 @@ This sensor takes input from 4 load cells, each supporting one leg of a bed or c
 - [KiCad](http://kicad-pcb.org/)
 - [Arduino IDE](https://www.arduino.cc/en/Main/Software)
 - [OpenSCAD](http://www.openscad.org/)
+- [Libre Office](https://www.libreoffice.org/)
 
 ### Arduino Libraries used
 - [Sparkfun HX711 Library](https://github.com/bogde/HX711)
