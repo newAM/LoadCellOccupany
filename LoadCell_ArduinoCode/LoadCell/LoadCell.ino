@@ -9,10 +9,11 @@
 
 // HX711 sample settings
 #define CALIBRATION   -22990 // ADC bits to Kg conversion factor
-#define NUM_SAMPLES   3      // number of sales to take per data point
-#define SAMPLE_PERIOD 100    // sample period in ms
-#define RESULT_WIDTH  5      // number of characters in result
-#define RESOLUTION    1      // number of characters after the decimal
+#define NUM_SAMPLES        3 // number of sales to take per data point
+#define SAMPLE_PERIOD    100 // sample period in ms
+#define RESULT_WIDTH       5 // number of characters in result
+#define RESOLUTION         1 // number of characters after the decimal
+#define PRECISION        0.1 // precision of the result
 
 // connection settings
 #define TIMEOUT   5000 // connection failure timeout in ms
@@ -23,7 +24,7 @@
 // MQTT topics
 #define TOPIC_BASE "/home/bedroom/bed" // base topic
 #define TOPIC_LOAD TOPIC_BASE "/load"  // topic to publish samples on
-#define TOPIC_TARE TOPIC_BASE "/tare"  // topic to recieve tare commands on
+#define TOPIC_TARE TOPIC_BASE "/tare"  // topic to receive tare commands on
 
 // client objects
 EthernetClient ethClient;
@@ -150,6 +151,7 @@ void loop()
     static uint32_t timer   = 0; // sample timer
     static uint8_t  samples = 0; // number of samples taken
     static float    avg     = 0; // load average
+    static float    oldAvg  = 0; // stores the past average
 
     // connect if disconnected
     if (!mqttClient.connected())
@@ -160,7 +162,6 @@ void loop()
     // take sample
     if (millis() - timer >= SAMPLE_PERIOD)
     {
-        // take a sample
         avg += scale.get_units();
         samples++;
 
@@ -172,12 +173,19 @@ void loop()
             // average the samples
             avg /= samples;
 
-            // convert the float to a string
-            dtostrf(avg, RESULT_WIDTH, RESOLUTION, result);
+            // transmit only if value has changed
+            if (abs(avg - oldAvg) > PRECISION)
+            {
+                // convert the float to a string
+                dtostrf(avg, RESULT_WIDTH, RESOLUTION, result);
 
-            // publish string
-            mqttClient.publish(TOPIC_LOAD, result);
-            
+                // publish string
+                mqttClient.publish(TOPIC_LOAD, result);
+
+                // store past transmission
+                oldAvg = avg;
+            }
+
             // clear variables
             avg     = 0;
             samples = 0;

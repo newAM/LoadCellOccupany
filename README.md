@@ -18,14 +18,24 @@ This sensor takes input from 4 load cells, each supporting one leg of a bed or c
 -  LoadCell_ArduinoCode - firmware for the ATMega328P
 -  LoadCell_Case - 3D printable case designed in OpenSCAD
 -  LoadCell_Holder - 3D printable holder for the load cells designed in OpenSCAD
+-  LoadCell_HomeAssistant - example Home Assistant configuration
 -  LoadCell_KiCAD - schematic and PCB
+
+## Media
+![Home Assistant Card](https://raw.githubusercontent.com/newAM/LoadCellOccupany/master/LoadCell_Media/LoadCell_Media_HASSCard.png)
+
+![Front Circuit View](https://raw.githubusercontent.com/newAM/LoadCellOccupany/master/LoadCell_Media/LoadCell_Media_FrontCircuitView.jpg)
 
 ## Software Used
 - [KiCad](http://kicad-pcb.org/)
 - [Arduino IDE](https://www.arduino.cc/en/Main/Software)
 - [OpenSCAD](http://www.openscad.org/)
 - [Libre Office](https://www.libreoffice.org/)
+- [Home Assistant](https://www.home-assistant.io/)
 
 ### Arduino Libraries used
 - [Sparkfun HX711 Library](https://github.com/bogde/HX711)
 - [Arduino MQTT Client](https://github.com/knolleary/pubsubclient)
+
+## Forks
+- [ESP8266 Load Cell](https://github.com/Skaronator/ESP8266-Load-Cell) - wireless edition
