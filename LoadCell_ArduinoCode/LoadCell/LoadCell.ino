@@ -9,7 +9,7 @@
 
 // HX711 sample settings
 #define CALIBRATION   -22990 // ADC bits to Kg conversion factor
-#define NUM_SAMPLES        3 // number of sales to take per data point
+#define NUM_SAMPLES        3 // number of samples to take per data point
 #define SAMPLE_PERIOD    100 // sample period in ms
 #define RESULT_WIDTH       5 // number of characters in result
 #define RESOLUTION         1 // number of characters after the decimal
