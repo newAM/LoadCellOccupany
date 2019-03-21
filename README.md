@@ -34,7 +34,7 @@ This sensor takes input from 4 load cells, each supporting one leg of a bed or c
 - [Home Assistant](https://www.home-assistant.io/)
 
 ### Arduino Libraries used
-- [Sparkfun HX711 Library](https://github.com/bogde/HX711)
+- [Sparkfun HX711 Library](https://github.com/bogde/HX711) @ [e80de1c07e990e07627ec215eec9e1efabf281ee](https://github.com/bogde/HX711/commit/e80de1c07e990e07627ec215eec9e1efabf281ee)
 - [Arduino MQTT Client](https://github.com/knolleary/pubsubclient)
 
 ## Forks
