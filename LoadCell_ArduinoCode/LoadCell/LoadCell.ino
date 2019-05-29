@@ -31,7 +31,7 @@ EthernetClient ethClient;
 PubSubClient mqttClient(ethClient);
 
 // HX711 load cell ADC
-HX711 scale(DOUT, CLK);
+HX711 scale;
 
 // reconnects to the MQTT broker
 void reconnect()
@@ -111,6 +111,7 @@ void callback(char* topic, byte* payload, unsigned int length)
 
 void setup()
 {
+    scale.begin(DOUT, CLK);
     // network settings
     const uint8_t mac[] = {0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x02}; // device MAC
     IPAddress mqttBroker(10, 0, 0, 4); // MQTT broker IP
