@@ -27,7 +27,7 @@ This sensor takes input from 4 load cells, each supporting one leg of a bed or c
 ![Front Circuit View](https://raw.githubusercontent.com/newAM/LoadCellOccupany/master/LoadCell_Media/LoadCell_Media_FrontCircuitView.jpg)
 
 ## Software Used
-- [KiCad](http://kicad-pcb.org/)
+- [KiCad](http://kicad.org/)
 - [Arduino IDE](https://www.arduino.cc/en/Main/Software)
 - [OpenSCAD](http://www.openscad.org/)
 - [Libre Office](https://www.libreoffice.org/)
